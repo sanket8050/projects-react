@@ -37,8 +37,10 @@
         },[includechar,includenum,length])
 
     return (
-      <>
-      <div className=" items-center mt-80 ml-120 border mr-120 rounded-3xl bg-purple-500 pl-3">
+    
+      
+      <div className=" items-center mt-80 ml-120 border mr-120 rounded-3xl bg-purple-500 pl-3" >
+        
         <div className="items-center flex ">
           <input className='outline rounded-2xl bg-amber-200 w-150 py-1 font-bold px-3 my-5' type="text" 
           placeholder='password'
@@ -67,7 +69,7 @@
         </div>
       </div>
 
-      </>
+     
       
     )
   }
