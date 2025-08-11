@@ -10,7 +10,7 @@ function Select() {
   }
   return (
     <>
-    <form  >
+    <form>
     <select  value={data} onChange={handle}>
 
       <option  value='s' >can</option>
