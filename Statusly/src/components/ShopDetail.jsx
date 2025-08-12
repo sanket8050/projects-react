@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@shadcn/ui'
-import { Button } from './common/Button.jsx'
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table'
+import { Button } from './ui/button'
 import { getShop } from '../services/firebase.jsx'
 import { formatTimestamp } from '../utils/helpers.jsx'
 
