@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui'
-import { Button } from './common/Button.jsx'
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
+import { Button } from './ui/button.jsx'
 import { formatTimestamp } from '../utils/helpers.jsx'
 
 export default function ShopCard({ shop, user, addFavorite, removeFavorite }) {

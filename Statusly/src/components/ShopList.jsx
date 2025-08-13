@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Input } from '@shadcn/ui'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@shadcn/ui'
+import { Input } from './ui/input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
 import ShopCard from './ShopCard.jsx'
 
 export default function ShopList({ shops, user, addFavorite, removeFavorite }) {

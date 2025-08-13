@@ -1,9 +1,9 @@
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui'
-import { Input } from '@shadcn/ui'
-import { Button } from '../components/common/Button.jsx'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import { Input } from '../components/ui/input'
+import { Button } from '../components/ui/button'
 import { AuthContext } from '../context/AuthContext.jsx'
 import { signUp, signIn } from '../services/firebase.jsx'
 

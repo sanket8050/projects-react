@@ -1,4 +1,4 @@
-import { Switch } from '@shadcn/ui'
+import { Switch } from './ui/switch'
 
 export default function StatusToggle({ checked, onChange }) {
   return (
