@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@shadcn/ui'
-import { Button } from './common/Button.jsx'
+// import { button } from './common/button.jsx'
 import { getShop } from '../services/firebase.jsx'
 import { formatTimestamp } from '../utils/helpers.jsx'
 
@@ -67,13 +67,13 @@ export default function ShopDetail({ user, addFavorite, removeFavorite }) {
               ))}
             </TableBody>
           </Table>
-          <Button
+          <button
             variant={isFavorite ? 'destructive' : 'default'}
             className="mt-4"
             onClick={handleFavorite}
           >
             {isFavorite ? 'Unfollow' : 'Follow'}
-          </Button>
+          </button>
         </CardContent>
       </Card>
     </div>

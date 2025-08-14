@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui'
-import { Button } from './common/Button.jsx'
+// import { button } from './common/button.jsx'
 import { formatTimestamp } from '../utils/helpers.jsx'
 
 export default function ShopCard({ shop, user, addFavorite, removeFavorite }) {
@@ -27,14 +27,14 @@ export default function ShopCard({ shop, user, addFavorite, removeFavorite }) {
           </CardHeader>
           <p className="text-sm text-gray-600">{shop.todayMenu?.slice(0, 2).map(i => i.name).join(' • ')}</p>
           <p className="text-xs text-gray-500">Last updated: {formatTimestamp(shop.lastUpdated)}</p>
-          <Button
+          <button
             variant={isFavorite ? 'destructive' : 'default'}
             size="sm"
             className="mt-2"
             onClick={(e) => { e.preventDefault(); handleFavorite() }}
           >
             {isFavorite ? 'Unfollow' : 'Follow'}
-          </Button>
+          </button>
         </CardContent>
       </Card>
     </Link>

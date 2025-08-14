@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui'
 import { Input } from '@shadcn/ui'
-import { Button } from '../components/common/Button.jsx'
+// import { button } from '../components/common/button.jsx'
 import { AuthContext } from '../context/AuthContext.jsx'
 import { signUp, signIn } from '../services/firebase.jsx'
 
@@ -76,14 +76,14 @@ export default function Login() {
                 {errors.role && <p className="text-red-500 text-sm">{errors.role.message}</p>}
               </div>
             )}
-            <Button type="submit">{isSignUp ? 'Sign Up' : 'Login'}</Button>
-            <Button
+            <button type="submit">{isSignUp ? 'Sign Up' : 'Login'}</button>
+            <button
               type="button"
               variant="link"
               onClick={() => setIsSignUp(!isSignUp)}
             >
               {isSignUp ? 'Already have an account? Login' : 'Need an account? Sign Up'}
-            </Button>
+            </button>
           </form>
         </CardContent>
       </Card>

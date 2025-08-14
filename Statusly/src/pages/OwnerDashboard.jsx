@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui'
 import { Input } from '@shadcn/ui'
 import { Textarea } from '@shadcn/ui'
-import { Button } from '../components/common/Button.jsx'
+// import { button } from '../components/common/button.jsx'
 import StatusToggle from '../components/StatusToggle.jsx'
 import { AuthContext } from '../context/AuthContext.jsx'
 import { getShop, updateShop, createShop } from '../services/firebase.jsx'
@@ -118,24 +118,24 @@ export default function OwnerDashboard() {
                     placeholder="Notes"
                     className="w-full sm:w-1/3"
                   />
-                  <Button
+                  <button
                     variant="destructive"
                     size="sm"
                     type="button"
                     onClick={() => remove(index)}
                   >
                     Remove
-                  </Button>
+                  </button>
                 </div>
               ))}
-              <Button
+              <button
                 type="button"
                 variant="outline"
                 className="mt-2"
                 onClick={() => append({ id: Date.now().toString(), name: '', price: '', available: true, notes: '' })}
               >
                 Add Item
-              </Button>
+              </button>
             </div>
             <div>
               <label className="block text-sm font-medium">Announcement</label>
@@ -145,7 +145,7 @@ export default function OwnerDashboard() {
                 className="mt-1"
               />
             </div>
-            <Button type="submit">Save</Button>
+            <button type="submit">Save</button>
           </form>
         </CardContent>
       </Card>

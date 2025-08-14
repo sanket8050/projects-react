@@ -12,6 +12,7 @@ export const AuthProvider = ({ children }) => {
     const auth = getAuth(app)
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user)
+      console.log("sanke")
       setLoading(false)
     })
     return unsubscribe
