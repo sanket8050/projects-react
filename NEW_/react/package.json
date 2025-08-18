@@ -1,0 +1,19 @@
+{
+  "name": "statusly",
+  "version": "1.0.0",
+  "description": "Local business status and menu platform",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "install-deps": "npm install && cd client && npm install && cd ../server && npm install"
+  },
+  "keywords": ["mern", "local-business", "real-time"],
+  "author": "Statusly Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
