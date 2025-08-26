@@ -1,4 +1,4 @@
-  import React from 'react'
+
   import { useEffect,useState,useRef } from 'react'
   function App() {
 
@@ -63,7 +63,7 @@
             <label htmlFor="char" >include char</label>
           </div>
           <div className='font-bold' >
-            <input type="checkbox" checked={includenum} onClick={()=>{setincludenum(prev => !prev)}} />
+            <input type="checkbox" checked={includenum} onChange={()=>{setincludenum(prev => !prev)}} />
             <label htmlFor="number">include number </label>
           </div>
         </div>

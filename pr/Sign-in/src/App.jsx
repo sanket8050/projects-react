@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Form from '../component/Form'
+
 import './App.css'
 import Select from '../component/Select'
 import Navbar from '../component/Navbar'
