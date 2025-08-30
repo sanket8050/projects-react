@@ -1,0 +1,986 @@
+[
+  {
+    "seat_no": "T400070223",
+    "name": "ADE ROHIT UTTAM",
+    "mother": "REKHA",
+    "prn": "72224777L",
+    "college": "PVGP[7]",
+    "semesters": [
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "subject_code": "304181",
+            "subject_name": "DIGITAL COMMUNICATION",
+            "ise": "015/030",
+            "ese": "033/070",
+            "total": "048/100",
+            "grade": "C",
+            "gp": 5,
+            "cp": 15
+          },
+          {
+            "subject_code": "304182",
+            "subject_name": "ELECTROMAGNETIC FIELD THEORY",
+            "ise": "012/030",
+            "ese": "011/070",
+            "total": "023/100",
+            "grade": "F",
+            "gp": 0,
+            "cp": 0
+          },
+          {
+            "subject_code": "304182",
+            "subject_name": "ELECTROMAGNETIC FIELD THEORY",
+            "ise": "---",
+            "ese": "---",
+            "total": "013/025",
+            "grade": "B",
+            "gp": 6,
+            "cp": 6
+          },
+          {
+            "subject_code": "304183",
+            "subject_name": "DATABASE MANAGEMENT",
+            "ise": "023/030",
+            "ese": "040/070",
+            "total": "063/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304184",
+            "subject_name": "MICROCONTROLLERS",
+            "ise": "023/030",
+            "ese": "041/070",
+            "total": "064/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304185D",
+            "subject_name": "COMP. NETWORKS (ELE-I)",
+            "ise": "018/030",
+            "ese": "033/070",
+            "total": "051/100",
+            "grade": "B",
+            "gp": 6,
+            "cp": 18
+          },
+          {
+            "subject_code": "304186",
+            "subject_name": "DIGITAL COMMUNICATION LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "022/050",
+            "grade": "P",
+            "gp": 4,
+            "cp": 4
+          },
+          {
+            "subject_code": "304187",
+            "subject_name": "DATABASE MANAGEMENT LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "012/025",
+            "grade": "C",
+            "gp": 5,
+            "cp": 5
+          },
+          {
+            "subject_code": "304188",
+            "subject_name": "MICROCONTROLLER LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "031/050",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304189D",
+            "subject_name": "COMPUTER NETWORKS",
+            "ise": "---",
+            "ese": "---",
+            "total": "015/025",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304190",
+            "subject_name": "SKILL DEVELOPMENT",
+            "ise": "---",
+            "ese": "---",
+            "total": "021/025",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304191E",
+            "subject_name": "ENVIRONMENT AND DEVELOPMENT",
+            "ise": "---",
+            "ese": "---",
+            "total": "---",
+            "grade": "AC",
+            "gp": 0,
+            "cp": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "subject_code": "304192",
+            "subject_name": "CELLULAR NETWORKS",
+            "ise": "016/030",
+            "ese": "021/070",
+            "total": "037/100",
+            "grade": "F",
+            "gp": 0,
+            "cp": 0
+          },
+          {
+            "subject_code": "304192",
+            "subject_name": "CELLULAR NETWORKS",
+            "ise": "---",
+            "ese": "---",
+            "total": "032/050",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304193",
+            "subject_name": "PROJECT MANAGEMENT",
+            "ise": "019/030",
+            "ese": "054/070",
+            "total": "073/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 27
+          },
+          {
+            "subject_code": "304194",
+            "subject_name": "POWER DEVICES & CIRCUITS",
+            "ise": "002/030",
+            "ese": "034/070",
+            "total": "036/100",
+            "grade": "F",
+            "gp": 0,
+            "cp": 0
+          },
+          {
+            "subject_code": "304194",
+            "subject_name": "POWER DEVICES & CIRCUITS",
+            "ise": "---",
+            "ese": "---",
+            "total": "010/050",
+            "grade": "F",
+            "gp": 0,
+            "cp": 0
+          },
+          {
+            "subject_code": "304195D",
+            "subject_name": "EMBEDDED PROCESSORS",
+            "ise": "014/030",
+            "ese": "028/070",
+            "total": "042/100",
+            "grade": "P",
+            "gp": 4,
+            "cp": 12
+          },
+          {
+            "subject_code": "304195D",
+            "subject_name": "EMBEDDED PROCESSORS",
+            "ise": "---",
+            "ese": "---",
+            "total": "014/025",
+            "grade": "B+",
+            "gp": 7,
+            "cp": 7
+          },
+          {
+            "subject_code": "304199",
+            "subject_name": "INTERNSHIP**",
+            "ise": "---",
+            "ese": "---",
+            "total": "068/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 32
+          },
+          {
+            "subject_code": "304200",
+            "subject_name": "MINI PROJECT",
+            "ise": "---",
+            "ese": "---",
+            "total": "039/050",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 18
+          },
+          {
+            "subject_code": "304191BB",
+            "subject_name": "ENG. LANG. FOR COMP. EXAMS",
+            "ise": "---",
+            "ese": "---",
+            "total": "---",
+            "grade": "AC",
+            "gp": 0,
+            "cp": 0
+          }
+        ]
+      }
+    ],
+    "third_year_sgpa": null,
+    "total_credits_earned": 32
+  },
+  {
+    "seat_no": "T400070224",
+    "name": "ADSARE SANKET SATISH",
+    "mother": "MANISHA",
+    "prn": "72224781J",
+    "college": "PVGP[7]",
+    "semesters": [
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "subject_code": "304181",
+            "subject_name": "DIGITAL COMMUNICATION",
+            "ise": "017/030",
+            "ese": "047/070",
+            "total": "064/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304182",
+            "subject_name": "ELECTROMAGNETIC FIELD THEORY",
+            "ise": "022/030",
+            "ese": "053/070",
+            "total": "075/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 27
+          },
+          {
+            "subject_code": "304182",
+            "subject_name": "ELECTROMAGNETIC FIELD THEORY",
+            "ise": "---",
+            "ese": "---",
+            "total": "020/025",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304183",
+            "subject_name": "DATABASE MANAGEMENT",
+            "ise": "024/030",
+            "ese": "050/070",
+            "total": "074/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 27
+          },
+          {
+            "subject_code": "304184",
+            "subject_name": "MICROCONTROLLERS",
+            "ise": "020/030",
+            "ese": "052/070",
+            "total": "072/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 27
+          },
+          {
+            "subject_code": "304185A",
+            "subject_name": "DIGITAL SIGNAL PRO. (ELE-I)",
+            "ise": "024/030",
+            "ese": "049/070",
+            "total": "073/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 27
+          },
+          {
+            "subject_code": "304186",
+            "subject_name": "DIGITAL COMMUNICATION LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "040/050",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304187",
+            "subject_name": "DATABASE MANAGEMENT LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "022/025",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304188",
+            "subject_name": "MICROCONTROLLER LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "034/050",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304189A",
+            "subject_name": "DIG. SIG. PRO. LAB (ELE–I).",
+            "ise": "---",
+            "ese": "---",
+            "total": "016/025",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304190",
+            "subject_name": "SKILL DEVELOPMENT",
+            "ise": "---",
+            "ese": "---",
+            "total": "016/025",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304191A",
+            "subject_name": "DEV. SOFT SKILLS & PER.",
+            "ise": "---",
+            "ese": "---",
+            "total": "---",
+            "grade": "AC",
+            "gp": 0,
+            "cp": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "subject_code": "304192",
+            "subject_name": "CELLULAR NETWORKS",
+            "ise": "024/030",
+            "ese": "047/070",
+            "total": "071/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 27
+          },
+          {
+            "subject_code": "304192",
+            "subject_name": "CELLULAR NETWORKS",
+            "ise": "---",
+            "ese": "---",
+            "total": "028/050",
+            "grade": "B+",
+            "gp": 7,
+            "cp": 7
+          },
+          {
+            "subject_code": "304193",
+            "subject_name": "PROJECT MANAGEMENT",
+            "ise": "021/030",
+            "ese": "059/070",
+            "total": "080/100",
+            "grade": "O",
+            "gp": 10,
+            "cp": 30
+          },
+          {
+            "subject_code": "304194",
+            "subject_name": "POWER DEVICES & CIRCUITS",
+            "ise": "011/030",
+            "ese": "056/070",
+            "total": "067/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304194",
+            "subject_name": "POWER DEVICES & CIRCUITS",
+            "ise": "---",
+            "ese": "---",
+            "total": "010/050",
+            "grade": "F",
+            "gp": 0,
+            "cp": 0
+          },
+          {
+            "subject_code": "304195A",
+            "subject_name": "DIGITAL IMAGE PROCESSING",
+            "ise": "026/030",
+            "ese": "051/070",
+            "total": "077/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 27
+          },
+          {
+            "subject_code": "304195A",
+            "subject_name": "DIGITAL IMAGE PROCESSING",
+            "ise": "---",
+            "ese": "---",
+            "total": "021/025",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304199",
+            "subject_name": "INTERNSHIP**",
+            "ise": "---",
+            "ese": "---",
+            "total": "077/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 36
+          },
+          {
+            "subject_code": "304200",
+            "subject_name": "MINI PROJECT",
+            "ise": "---",
+            "ese": "---",
+            "total": "041/050",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 18
+          },
+          {
+            "subject_code": "304191AB",
+            "subject_name": "PATENT LAW FOR ENGG. & SCI.",
+            "ise": "---",
+            "ese": "---",
+            "total": "---",
+            "grade": "AC",
+            "gp": 0,
+            "cp": 0
+          }
+        ]
+      }
+    ],
+    "third_year_sgpa": null,
+    "total_credits_earned": 41
+  },
+  {
+    "seat_no": "T400070225",
+    "name": "AHIRE NEERAD VINAYAK",
+    "mother": "VRUSHALI",
+    "prn": "72224782G",
+    "college": "PVGP[7]",
+    "semesters": [
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "subject_code": "304181",
+            "subject_name": "DIGITAL COMMUNICATION",
+            "ise": "025/030",
+            "ese": "039/070",
+            "total": "064/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304182",
+            "subject_name": "ELECTROMAGNETIC FIELD THEORY",
+            "ise": "021/030",
+            "ese": "044/070",
+            "total": "065/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304182",
+            "subject_name": "ELECTROMAGNETIC FIELD THEORY",
+            "ise": "---",
+            "ese": "---",
+            "total": "021/025",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304183",
+            "subject_name": "DATABASE MANAGEMENT",
+            "ise": "025/030",
+            "ese": "034/070",
+            "total": "059/100",
+            "grade": "B+",
+            "gp": 7,
+            "cp": 21
+          },
+          {
+            "subject_code": "304184",
+            "subject_name": "MICROCONTROLLERS",
+            "ise": "023/030",
+            "ese": "051/070",
+            "total": "074/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 27
+          },
+          {
+            "subject_code": "304185D",
+            "subject_name": "COMP. NETWORKS (ELE-I)",
+            "ise": "014/030",
+            "ese": "038/070",
+            "total": "052/100",
+            "grade": "B",
+            "gp": 6,
+            "cp": 18
+          },
+          {
+            "subject_code": "304186",
+            "subject_name": "DIGITAL COMMUNICATION LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "030/050",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304187",
+            "subject_name": "DATABASE MANAGEMENT LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "023/025",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304188",
+            "subject_name": "MICROCONTROLLER LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "044/050",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304189D",
+            "subject_name": "COMPUTER NETWORKS",
+            "ise": "---",
+            "ese": "---",
+            "total": "024/025",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304190",
+            "subject_name": "SKILL DEVELOPMENT",
+            "ise": "---",
+            "ese": "---",
+            "total": "022/025",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304191B",
+            "subject_name": "ENTP. AND IP STRATEGY.",
+            "ise": "---",
+            "ese": "---",
+            "total": "---",
+            "grade": "AC",
+            "gp": 0,
+            "cp": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "subject_code": "304192",
+            "subject_name": "CELLULAR NETWORKS",
+            "ise": "023/030",
+            "ese": "033/070",
+            "total": "056/100",
+            "grade": "B+",
+            "gp": 7,
+            "cp": 21
+          },
+          {
+            "subject_code": "304192",
+            "subject_name": "CELLULAR NETWORKS",
+            "ise": "---",
+            "ese": "---",
+            "total": "041/050",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304193",
+            "subject_name": "PROJECT MANAGEMENT",
+            "ise": "016/030",
+            "ese": "039/070",
+            "total": "055/100",
+            "grade": "B+",
+            "gp": 7,
+            "cp": 21
+          },
+          {
+            "subject_code": "304194",
+            "subject_name": "POWER DEVICES & CIRCUITS",
+            "ise": "011/030",
+            "ese": "046/070",
+            "total": "057/100",
+            "grade": "B+",
+            "gp": 7,
+            "cp": 21
+          },
+          {
+            "subject_code": "304194",
+            "subject_name": "POWER DEVICES & CIRCUITS",
+            "ise": "---",
+            "ese": "---",
+            "total": "039/050",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 9
+          },
+          {
+            "subject_code": "304195D",
+            "subject_name": "EMBEDDED PROCESSORS",
+            "ise": "017/030",
+            "ese": "053/070",
+            "total": "070/100",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 27
+          },
+          {
+            "subject_code": "304195D",
+            "subject_name": "EMBEDDED PROCESSORS",
+            "ise": "---",
+            "ese": "---",
+            "total": "018/025",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 9
+          },
+          {
+            "subject_code": "304199",
+            "subject_name": "INTERNSHIP**",
+            "ise": "---",
+            "ese": "---",
+            "total": "090/100",
+            "grade": "O",
+            "gp": 10,
+            "cp": 40
+          },
+          {
+            "subject_code": "304200",
+            "subject_name": "MINI PROJECT",
+            "ise": "---",
+            "ese": "---",
+            "total": "046/050",
+            "grade": "O",
+            "gp": 10,
+            "cp": 20
+          },
+          {
+            "subject_code": "304191BB",
+            "subject_name": "ENG. LANG. FOR COMP. EXAMS",
+            "ise": "---",
+            "ese": "---",
+            "total": "---",
+            "grade": "AC",
+            "gp": 0,
+            "cp": 0
+          }
+        ]
+      }
+    ],
+    "third_year_sgpa": "8.33",
+    "total_credits_earned": 42
+  },
+  {
+    "seat_no": "T400070226",
+    "name": "AMBEKAR SAHIL SATISH",
+    "mother": "SAKSHI",
+    "prn": "72224790H",
+    "college": "PVGP[7]",
+    "semesters": [
+      {
+        "semester": 5,
+        "subjects": [
+          {
+            "subject_code": "304181",
+            "subject_name": "DIGITAL COMMUNICATION",
+            "ise": "015/030",
+            "ese": "028/070",
+            "total": "043/100",
+            "grade": "P",
+            "gp": 4,
+            "cp": 12
+          },
+          {
+            "subject_code": "304182",
+            "subject_name": "ELECTROMAGNETIC FIELD THEORY",
+            "ise": "008/030",
+            "ese": "044/070",
+            "total": "052/100",
+            "grade": "B",
+            "gp": 6,
+            "cp": 18
+          },
+          {
+            "subject_code": "304182",
+            "subject_name": "ELECTROMAGNETIC FIELD THEORY",
+            "ise": "---",
+            "ese": "---",
+            "total": "018/025",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 9
+          },
+          {
+            "subject_code": "304183",
+            "subject_name": "DATABASE MANAGEMENT",
+            "ise": "021/030",
+            "ese": "045/070",
+            "total": "066/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304184",
+            "subject_name": "MICROCONTROLLERS",
+            "ise": "023/030",
+            "ese": "045/070",
+            "total": "068/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304185A",
+            "subject_name": "DIGITAL SIGNAL PRO. (ELE-I)",
+            "ise": "019/030",
+            "ese": "033/070",
+            "total": "052/100",
+            "grade": "B",
+            "gp": 6,
+            "cp": 18
+          },
+          {
+            "subject_code": "304186",
+            "subject_name": "DIGITAL COMMUNICATION LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "032/050",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304187",
+            "subject_name": "DATABASE MANAGEMENT LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "014/025",
+            "grade": "B+",
+            "gp": 7,
+            "cp": 7
+          },
+          {
+            "subject_code": "304188",
+            "subject_name": "MICROCONTROLLER LAB",
+            "ise": "---",
+            "ese": "---",
+            "total": "038/050",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 9
+          },
+          {
+            "subject_code": "304189A",
+            "subject_name": "DIG. SIG. PRO. LAB (ELE–I).",
+            "ise": "---",
+            "ese": "---",
+            "total": "015/025",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304190",
+            "subject_name": "SKILL DEVELOPMENT",
+            "ise": "---",
+            "ese": "---",
+            "total": "017/025",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "310269",
+            "subject_name": "HON-COMPUTATIONAL STAT.",
+            "ise": "015/030",
+            "ese": "035/070",
+            "total": "050/100",
+            "grade": "B",
+            "gp": 6,
+            "cp": 24
+          },
+          {
+            "subject_code": "310269",
+            "subject_name": "HON-COMPUTATIONAL STAT.",
+            "ise": "---",
+            "ese": "---",
+            "total": "046/050",
+            "grade": "O",
+            "gp": 10,
+            "cp": 10
+          },
+          {
+            "subject_code": "304191A",
+            "subject_name": "DEV. SOFT SKILLS & PER.",
+            "ise": "---",
+            "ese": "---",
+            "total": "---",
+            "grade": "AC",
+            "gp": 0,
+            "cp": 0
+          }
+        ]
+      },
+      {
+        "semester": 6,
+        "subjects": [
+          {
+            "subject_code": "304192",
+            "subject_name": "CELLULAR NETWORKS",
+            "ise": "022/030",
+            "ese": "038/070",
+            "total": "060/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304192",
+            "subject_name": "CELLULAR NETWORKS",
+            "ise": "---",
+            "ese": "---",
+            "total": "039/050",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 9
+          },
+          {
+            "subject_code": "304193",
+            "subject_name": "PROJECT MANAGEMENT",
+            "ise": "015/030",
+            "ese": "054/070",
+            "total": "069/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304194",
+            "subject_name": "POWER DEVICES & CIRCUITS",
+            "ise": "010/030",
+            "ese": "044/070",
+            "total": "054/100",
+            "grade": "B",
+            "gp": 6,
+            "cp": 18
+          },
+          {
+            "subject_code": "304194",
+            "subject_name": "POWER DEVICES & CIRCUITS",
+            "ise": "---",
+            "ese": "---",
+            "total": "038/050",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 9
+          },
+          {
+            "subject_code": "304195D",
+            "subject_name": "EMBEDDED PROCESSORS",
+            "ise": "020/030",
+            "ese": "041/070",
+            "total": "061/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 24
+          },
+          {
+            "subject_code": "304195D",
+            "subject_name": "EMBEDDED PROCESSORS",
+            "ise": "---",
+            "ese": "---",
+            "total": "015/025",
+            "grade": "A",
+            "gp": 8,
+            "cp": 8
+          },
+          {
+            "subject_code": "304199",
+            "subject_name": "INTERNSHIP**",
+            "ise": "---",
+            "ese": "---",
+            "total": "081/100",
+            "grade": "O",
+            "gp": 10,
+            "cp": 40
+          },
+          {
+            "subject_code": "304200",
+            "subject_name": "MINI PROJECT",
+            "ise": "---",
+            "ese": "---",
+            "total": "041/050",
+            "grade": "A+",
+            "gp": 9,
+            "cp": 18
+          },
+          {
+            "subject_code": "310270",
+            "subject_name": "HON-ARTIFICIAL INTELL.",
+            "ise": "016/030",
+            "ese": "051/070",
+            "total": "067/100",
+            "grade": "A",
+            "gp": 8,
+            "cp": 32
+          }
+        ]
+      }
+    ],
+    "third_year_sgpa": null,
+    "total_credits_earned": 41
+  }
+]
