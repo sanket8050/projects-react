@@ -1,4 +1,4 @@
-import { BrowserRouter as Router ,Route,Routes, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router ,Route,Routes } from 'react-router-dom'
 import { useState } from 'react'
 import './App.css'
 import Navbar from '../pages/Navbar'
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
+    <Router>
       <Navbar/>
 
       <Routes>
@@ -22,7 +22,7 @@ function App() {
         <Route path = '/Blog' element={<Blog/>} />
         <Route path='*' element={<NotFound/>} />  
       </Routes>
-    </BrowserRouter>
+    </Router>
     
     </>
   )
