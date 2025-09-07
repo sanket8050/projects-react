@@ -1,0 +1,28 @@
+{
+  "name": "omr-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["omr", "exam", "scoring"],
+  "author": "",
+  "license": "ISC",
+  "description": "OMR Answer Sheet Checker Backend",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "multer": "^2.0.2",
+    "xlsx": "^0.18.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
