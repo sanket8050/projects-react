@@ -39,7 +39,7 @@ function App() {
         ) : (
           <ul>{data.length > 0 
             ? (
-              data   .map((user, index) => (
+              data.map((user, index) => (
                 <div key={index}>
                   <p>{user.xname}</p>
                   <p>{user.username}</p>
