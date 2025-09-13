@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { li } from 'framer-motion/client';
 
 function App() {
   const [data,setdata] = useState([]);
@@ -15,7 +16,7 @@ function App() {
       setloading(true)
       const response = await fetch('https://dummyjson.com/products')
       const data = await response.json();
-      setdata(data)
+      setdata(data.products)
     } catch (error) {
       
       
@@ -25,18 +26,17 @@ function App() {
   }
   useEffect(()=>{
     fething()
-  })
+  },[])
   return (
     <>
-    { loading ? <p>loading...</p> : 
-    
-    (
-
-      <ul>{data.length > 0 ? (data.map((data)=>{}))}</ul>
-    )
-    }
+    {loading ? <h1>Loading...</h1> : data.map((e)=>
+      <li key={e.id}>{e.title }</li>
+      // console.log(e.title);
+      // console.log(e.id);
+      // console.log(e);
+      
+    )}
     </>
   )
 }
-
 export default App

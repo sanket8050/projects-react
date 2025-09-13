@@ -1,110 +1,102 @@
-// src/App.jsx
-// Pagination example for a Vite + React app.
-// Drop this file into your Vite project's `src/` folder (replace the default App.jsx)
-// or copy the <Pagination /> component into `src/components/Pagination.jsx` and import it from App.jsx.
+import React, { useEffect, useState } from "react";
+import Skeleton from "./components/Skeleton";
 
-import React, { useState, useMemo } from "react";
+function App() {
+  const [data, setdata] = useState({ products: [], total: 0, skip: 0, limit: 10 });
+  const [loading, setloading] = useState(false);
+  const [error, seterror] = useState(false);
 
-// SAMPLE DATA: you can replace this with props or fetched data.
-const sampleItems = Array.from({ length: 20 }, (_, i) => `Item ${i + 1}`);
-
-// Pagination component: shows `pageSize` items at a time and provides Prev/Next + jump buttons
-export function Pagination({ items = sampleItems, pageSize = 3 }) {
-  // current page index (0-based)
-  const [page, setPage] = useState(0);
-
-  // how many pages in total
-  const totalPages = Math.ceil(items.length / pageSize);
-
-  // where the current window starts in the array
-  const startIndex = page * pageSize;
-
-  // slice the items for the current page. useMemo is optional but avoids re-slicing on unrelated rerenders
-  const currentItems = useMemo(() => {
-    return items.slice(startIndex, startIndex + pageSize);
-  }, [items, startIndex, pageSize]);
-
-  // move back, but never below 0
-  function handlePrev() {
-    setPage((p) => Math.max(0, p - 1));
+  async function fetchdata(skip = 0, limit = 10) {
+    try {
+      setloading(true);
+      const res = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
+      const json = await res.json();
+      setdata(json);
+    } catch (error) {
+      seterror(true);
+    } finally {
+      setloading(false);
+    }
   }
 
-  // move forward, but never past last page
-  function handleNext() {
-    setPage((p) => Math.min(totalPages - 1, p + 1));
-  }
+  useEffect(() => {
+    fetchdata(0, 10);
+  }, []);
 
-  // jump to a specific page (safely clamped)
-  function jumpTo(p) {
-    setPage(Math.max(0, Math.min(totalPages - 1, p)));
-  }
+  const handlenext = () => {
+    if (data.skip + data.limit < data.total)
+      fetchdata(data.skip + data.limit, data.limit);
+  };
+
+  const handleprev = () => {
+    if (data.skip - data.limit >= 0)
+      fetchdata(data.skip - data.limit, data.limit);
+  };
 
   return (
-    <div style={{ maxWidth: 680, margin: "2rem auto", fontFamily: "system-ui, sans-serif" }}>
-      <h1 style={{ marginBottom: 8 }}>Pagination — show {pageSize} items at a time</h1>
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 flex flex-col items-center py-12 px-4">
+      
+      {/* Heading */}
+      <h1 className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-8 tracking-wide drop-shadow-md">
+        Product Catalog
+      </h1>
 
-      <div style={{ marginBottom: 12, color: "#555" }}>
-        Page <strong>{page + 1}</strong> of <strong>{totalPages}</strong>
-      </div>
-
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        {currentItems.map((item, idx) => (
-          <li
-            key={startIndex + idx}
-            style={{
-              padding: "10px 12px",
-              border: "1px solid #e3e3e3",
-              borderRadius: 8,
-              marginBottom: 8,
-              background: "#fff",
-            }}
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-
-      <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 12 }}>
-        <button onClick={handlePrev} disabled={page === 0} aria-label="Previous page">
-          Prev
-        </button>
-
-        <button onClick={handleNext} disabled={page === totalPages - 1} aria-label="Next page">
-          Next
-        </button>
-
-        {/* simple page-jump UI */}
-        <div style={{ marginLeft: "auto", display: "flex", gap: 6, alignItems: "center" }}>
-          <span style={{ color: "#666" }}>Jump:</span>
-          {Array.from({ length: totalPages }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => jumpTo(i)}
-              aria-current={i === page ? "true" : undefined}
-              style={{
-                minWidth: 36,
-                padding: "6px 8px",
-                borderRadius: 6,
-                border: i === page ? "2px solid #111" : "1px solid #ddd",
-                fontWeight: i === page ? 700 : 400,
-              }}
-            >
-              {i + 1}
-            </button>
+      {/* Loading Skeletons */}
+      {loading ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <Skeleton key={i} />
           ))}
         </div>
-      </div>
+      ) : error ? (
+        <div className="bg-red-50 border border-red-200 rounded-2xl p-8 text-center max-w-md">
+          <p className="text-red-700 text-lg font-semibold">⚠️ Something went wrong, please try again.</p>
+        </div>
+      ) : (
+        <>
+          {/* Products Grid */}
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 w-full max-w-7xl flex-1 content-start">
+            {data.products.map((e) => (
+              <li
+                key={e.id}
+                className="bg-gradient-to-br from-white to-gray-50 shadow-xl rounded-2xl p-6 flex flex-col items-start hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-white font-bold">📦</span>
+                </div>
+                <p className="text-gray-800 font-semibold text-lg">{e.title}</p>
+              </li>
+            ))}
+          </ul>
 
-      {/* Hint about an edge case: last page can have fewer items than pageSize */}
-      <p style={{ marginTop: 10, color: "#666" }}>
-        Note: the last page may show fewer than {pageSize} items if the total number of items is not a
-        multiple of {pageSize}.
-      </p>
+          {/* Pagination Controls */}
+          <div className="flex gap-6 mt-6">
+            <button
+              onClick={handleprev}
+              disabled={data.skip === 0}
+              className="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            >
+              ◀ Prev
+            </button>
+
+            <button
+              onClick={handlenext}
+              disabled={data.skip + data.limit >= data.total}
+              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            >
+              Next ▶
+            </button>
+          </div>
+
+          {/* Footer */}
+          <footer className="mt-4 text-gray-700 text-lg font-medium">
+            Page <span className="font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">{data.skip / data.limit + 1}</span> of{" "}
+            {Math.ceil(data.total / data.limit)}
+          </footer>
+        </>
+      )}
     </div>
   );
 }
 
-// Default App — renders the Pagination component. Replace your project's App.jsx with this
-export default function App() {
-  return <Pagination />;
-}
+export default App;
