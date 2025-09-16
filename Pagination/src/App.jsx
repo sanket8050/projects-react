@@ -6,7 +6,8 @@ function App() {
   const [loading, setloading] = useState(false);
   const [error, seterror] = useState(false);
 
-  async function fetchdata(skip = 0, limit = 10) {
+
+  async function fetchdata(skip = 0, limit =  10) {
     try {
       setloading(true);
       const res = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
