@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+/*import { useState } from 'react';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -20,7 +20,38 @@ export default function LoginForm() {
     } catch (error) {
       setMessage('Error logging in. Please try again.');
     }
+  };*/
+
+  'use client';
+
+import { useState, useEffect } from 'react';
+import { useSession, signIn, signOut } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+
+export default function LoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status === 'authenticated') router.push('/home');
+  }, [status, router]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = await signIn('credentials', {
+      redirect: false,
+      email,
+      password,
+    });
+    if (result?.error) setMessage('Invalid credentials');
+    else setMessage('Login successful');
   };
+
+  // Rest of the form code remains the same...
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
