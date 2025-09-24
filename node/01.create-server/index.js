@@ -13,7 +13,7 @@
 // })
 
 // app.listen(2000);
-
+//---------------------------------------------------------------------------------
 // localhost://2000/1/2
 // const express = require("express");
 // const app = express();
@@ -72,7 +72,7 @@ app.post("/signup", (req, res) => {
   res.json({
     message: "Signup data received",
     user: username,
-    pass: password
+    pass: password  
   });
 });
 
