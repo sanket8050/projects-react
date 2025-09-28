@@ -7,11 +7,12 @@ export default function UserClient({ user, attending, meal }) {
   const [choice, setChoice] = useState(attending);
   const router = useRouter();
 
-  const handleAttendance = async (e) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+  const handleAttendance = async (attendingValue) => {
     try {
+      const formData = new FormData();
+      formData.append('userId', String(user.id));
+      formData.append('attending', attendingValue ? 'true' : 'false');
+
       const res = await fetch('/api/attendance', { method: 'POST', body: formData });
       const body = await res.json().catch(() => null);
       // eslint-disable-next-line no-console
@@ -21,7 +22,7 @@ export default function UserClient({ user, attending, meal }) {
         throw new Error(msg);
       }
       // update local state so UI reflects new choice immediately
-      setChoice(formData.get('attending') === 'true');
+      setChoice(attendingValue);
       // refresh current page to reflect server-side data
       router.replace('/user');
     } catch (err) {
@@ -48,30 +49,27 @@ export default function UserClient({ user, attending, meal }) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold mb-6">Welcome, {user.name}</h1>
+      <h1 className="text-3xl font-bold mb-6 text-cyan-900">Welcome, {user.name}</h1>
 
-      {/* Attendance buttons */}
-      <form onSubmit={handleAttendance} className="flex gap-4 mb-6">
-        <input type="hidden" name="userId" value={user.id} />
+      {/* Attendance buttons: use explicit onClick to send the value reliably */}
+      <div className="flex gap-4 mb-6">
         <button
-          type="submit"
-          name="attending"
-          value="true"
+          type="button"
+          onClick={() => handleAttendance(true)}
           className={`px-6 py-3 text-lg font-bold rounded-lg shadow 
-            ${choice ? "bg-green-600 text-white" : "bg-green-300 text-black"}`}
+            ${choice ? "bg-green-600 text-black" : "bg-green-300 text-black"}`}
         >
           ✅ Present
         </button>
         <button
-          type="submit"
-          name="attending"
-          value="false"
+          type="button"
+          onClick={() => handleAttendance(false)}
           className={`px-6 py-3 text-lg font-bold rounded-lg shadow 
-            ${!choice ? "bg-red-600 text-white" : "bg-red-300 text-black"}`}
+            ${!choice ? "bg-red-600 text-black" : "bg-red-300 text-black"}`}
         >
           ❌ Absent
         </button>
-      </form>
+      </div>
 
       {/* Regular option */}
       <form onSubmit={handleRegular} className="mb-6">
@@ -82,11 +80,11 @@ export default function UserClient({ user, attending, meal }) {
             name="isRegular"
             defaultChecked={user.isRegular}
           />
-          <span className="text-lg">Regular Attendee</span>
+          <span className="text-lg text-amber-900">Regular Attendee</span>
         </label>
         <button
           type="submit"
-          className="ml-4 px-4 py-2 bg-blue-500 text-white rounded"
+          className="ml-4 px-4 py-2 bg-blue-500 text-black rounded"
         >
           Save
         </button>
@@ -95,8 +93,8 @@ export default function UserClient({ user, attending, meal }) {
       {/* Meal info */}
       {meal?.description && (
         <div className="bg-white shadow p-4 rounded w-full max-w-md">
-          <h2 className="text-xl font-semibold mb-2">🍴 Today’s Meal</h2>
-          <p>{meal.description}</p>
+          <h2 className="text-xl font-semibold mb-2 text-amber-900">🍴 Today’s Meal</h2>
+          <p className="text-zinc-900 ">{meal.description}</p>
         </div>
       )}
     </div>

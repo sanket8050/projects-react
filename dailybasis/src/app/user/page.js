@@ -16,11 +16,24 @@ export default async function UserPage() {
   // Get user and check daily reset
   const user = await prisma.user.findUnique({ where: { email: session.user.email } });
   const today = startOfDay(new Date());
+
+  // Dev logs: show fetched user and whether a reset will run
+  // eslint-disable-next-line no-console
+  console.log('[user page] fetched user=', user, 'today=', today, 'isToday(lastUpdate)=', isToday(user.lastUpdate));
+
   let attending = user.attending;
   if (!isToday(user.lastUpdate)) {
     // Reset for new day
     attending = user.isRegular; // Default to regular status
+    // eslint-disable-next-line no-console
+    console.log('[user page] daily reset: setting attending=', attending, 'for', user.email);
     await prisma.user.update({ where: { email: session.user.email }, data: { attending, lastUpdate: today } });
+    // refetch so the client receives the actual DB state after reset
+    // eslint-disable-next-line no-console
+    console.log('[user page] refetching user after reset');
+    const refetched = await prisma.user.findUnique({ where: { email: session.user.email } });
+    // eslint-disable-next-line no-console
+    console.log('[user page] refetched user=', refetched);
   }
 
   // Get today's meal description
