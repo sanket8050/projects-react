@@ -31,7 +31,7 @@ enum Role {
 }
 
 model Meal {
-  id           String      @id @default(uuid())
+  id           String   @id @default(uuid())
   date         DateTime @unique // one per day
   description  String?  // optional
 }
