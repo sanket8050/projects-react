@@ -4,6 +4,7 @@ function Fetch() {
 
     const [data , setdata] = useState([]);
     
+    
     useEffect(()=>{
         fetch("https://jsonplaceholder.typicode.com/users")
         .then((res)=>res.json())
@@ -15,7 +16,7 @@ function Fetch() {
     <ul>
 
         {data.map((e)=>(
-            <li key={e.id}>{e.name}</li>
+            <li key={e.id}>  {e.phone}</li>
             
         ))}
     </ul>
