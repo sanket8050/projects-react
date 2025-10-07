@@ -1,9 +1,13 @@
 import React from 'react'
+import Button from '../src/component/button'
 
 function Home() {
   return (
-    <h1>Homoe</h1>
+    <div>
+
+    <h1>HOme</h1>
+    <Button />  
+    </div>
   )
 }
-
 export default Home
