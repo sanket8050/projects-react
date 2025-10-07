@@ -14,28 +14,55 @@ export const authOptions = {
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        const user = await prisma.user.findUnique({ where: { email: credentials.email } });
-        if (user && bcrypt.compareSync(credentials.password, user.password)) {
-          return { id: user.id, name: user.name, email: user.email, role: user.role };
+        try {
+          if (!credentials?.email || !credentials?.password) {
+            return null;
+          }
+          
+          const user = await prisma.user.findUnique({ 
+            where: { email: credentials.email } 
+          });
+          
+          if (user && bcrypt.compareSync(credentials.password, user.password)) {
+            return { 
+              id: user.id.toString(), 
+              name: user.name, 
+              email: user.email, 
+              role: user.role 
+            };
+          }
+          return null;
+        } catch (error) {
+          console.error('Authorization error:', error);
+          return null;
         }
-        return null;
       },
     }),
   ],
-  session: { strategy: 'jwt' },
+  session: { 
+    strategy: 'jwt',
+    maxAge: 24 * 60 * 60, // 24 hours
+  },
   callbacks: {
     async jwt({ token, user }) {
-      if (user) token.role = user.role;
+      if (user) {
+        token.id = user.id;
+        token.role = user.role;
+      }
       return token;
     },
     async session({ session, token }) {
-      if (session.user) session.user.role = token.role;
+      if (token && session.user) {
+        session.user.id = token.id;
+        session.user.role = token.role;
+      }
       return session;
     },
   },
   pages: {
     signIn: '/signin',
   },
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);

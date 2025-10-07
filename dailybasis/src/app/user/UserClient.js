@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
+import LogoutButton from '@/components/LogoutButton';
 
 export default function UserClient({ user, attending, meal }) {
   const [choice, setChoice] = useState(attending);
@@ -49,7 +50,10 @@ export default function UserClient({ user, attending, meal }) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold mb-6 text-cyan-900">Welcome, {user.name}</h1>
+      <div className="flex justify-between items-center w-full max-w-md mb-6">
+        <h1 className="text-3xl font-bold text-cyan-900">Welcome, {user.name}</h1>
+        <LogoutButton />
+      </div>
 
       {/* Attendance buttons: use explicit onClick to send the value reliably */}
       <div className="flex gap-4 mb-6">

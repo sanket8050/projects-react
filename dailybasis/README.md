@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Daily Basis - Mess Management System
+
+A simple mess management system built with Next.js, Prisma, and NextAuth for tracking daily attendance and meals.
+
+## Features
+
+- **User Authentication**: Sign up and sign in with email/password
+- **Role-based Access**: Admin and User roles
+- **Daily Attendance**: Users can mark themselves as present or absent
+- **Regular Attendee**: Users can set themselves as regular (no need to update daily)
+- **Admin Dashboard**: View attending students and set daily meal descriptions
+- **Automatic Daily Reset**: Attendance resets daily based on regular status
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 19, Tailwind CSS
+- **Backend**: Next.js API Routes, Prisma ORM
+- **Database**: PostgreSQL
+- **Authentication**: NextAuth.js
+- **UI Components**: Radix UI, Lucide React
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- PostgreSQL database
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd dailybasis
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+Create a `.env.local` file in the root directory:
+```env
+DATABASE_URL="postgresql://username:password@localhost:5432/dailybasis"
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key-here"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Set up the database:
+```bash
+# Generate Prisma client
+npm run db:generate
 
-## Learn More
+# Push schema to database
+npm run db:push
 
-To learn more about Next.js, take a look at the following resources:
+# Set up sample data
+npm run db:setup
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Run the development server:
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-## Deploy on Vercel
+## Default Credentials
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+After running `npm run db:setup`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Admin**: admin@example.com / admin123
+- **User**: user@example.com / user123
+
+## Usage
+
+### For Users
+1. Sign up with your email and password
+2. After login, you'll see your dashboard
+3. Mark yourself as Present or Absent for today
+4. Optionally, check "Regular Attendee" to automatically be marked present daily
+5. View today's meal description (if set by admin)
+
+### For Admins
+1. Admin role must be set manually in the database
+2. View list of students attending today
+3. Set daily meal descriptions
+4. Monitor overall attendance
+
+## Database Schema
+
+- **User**: id, name, email, password, role, attending, isRegular, lastUpdate
+- **Meal**: id, date, description
+- **Role**: USER, ADMIN
+
+## API Endpoints
+
+- `POST /api/attendance` - Update user attendance
+- `POST /api/regular` - Update regular status
+- `GET/POST /api/auth/[...nextauth]` - Authentication endpoints
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run db:generate` - Generate Prisma client
+- `npm run db:push` - Push schema to database
+- `npm run db:setup` - Set up sample data
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).

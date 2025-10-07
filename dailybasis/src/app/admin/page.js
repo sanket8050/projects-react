@@ -7,6 +7,7 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import LogoutButton from "@/components/LogoutButton";
 import {
   Table,
   TableBody,
@@ -20,7 +21,7 @@ const prisma = new PrismaClient();
 
 export default async function AdminPage() {
   const session = await getServerSession(authOptions);
-  if (!session || session.user.role !== "ADMIN") {
+  if (!session || session.user?.role !== "ADMIN") {
     redirect("/signin");
   }
 
@@ -43,9 +44,12 @@ export default async function AdminPage() {
     <div className="flex flex-col items-center min-h-screen p-8 bg-gray-50">
       <Card className="w-full max-w-2xl shadow-lg">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">
-            Admin Dashboard
-          </CardTitle>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-2xl font-bold">
+              Admin Dashboard
+            </CardTitle>
+            <LogoutButton />
+          </div>
         </CardHeader>
 
         <CardContent className="space-y-6">

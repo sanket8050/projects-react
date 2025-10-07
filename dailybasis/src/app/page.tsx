@@ -11,19 +11,8 @@ import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { authOptions } from './api/auth/[...nextauth]/route';
 
-type UserWithRole = {
-  name?: string | null;
-  email?: string | null;
-  image?: string | null;
-  role?: string | null;
-};
-
-type SessionWithRole = {
-  user?: UserWithRole;
-};
-
 export default async function HomePage() {
-  const session = (await getServerSession(authOptions as any)) as SessionWithRole | null;
+  const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/signin');
