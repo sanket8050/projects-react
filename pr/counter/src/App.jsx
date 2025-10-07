@@ -33,7 +33,7 @@ const decrease =()=>{
    <h2>counter</h2>
 
     <h3>counting : {counter}</h3>
-   <button onClick={increase()}>increase</button>
+   <button onClick={increase}>increase</button>
    <button onClick={decrease}>decrease</button>
    </>
   )
