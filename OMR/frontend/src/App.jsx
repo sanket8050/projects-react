@@ -4,7 +4,7 @@ import UploadOMR from "./components/UploadOMR";
 import ResultsTable from "./components/ResultsTable";
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("upload");
+  const [activeTab, setActiveTab] = useState("upload")
 
   return (
     <div style={{ 
@@ -92,7 +92,7 @@ export default function App() {
           color: "#666",
           borderTop: "1px solid #ddd"
         }}>
-          <p>OMR Answer Sheet Checker - Built with React, Node.js, and Python</p>
+          <p>OMReee Answer Sheet Checker - Built with React, Node.js, and Python</p>
           <p style={{ fontSize: "14px", marginTop: "5px" }}>
             Features: Excel Upload • OMR Processing • Automated Scoring • Results Export
           </p>
