@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image
 import os
 
+
 def process_omr(image_path):
     """
     Process OMR sheet image and detect filled bubbles
