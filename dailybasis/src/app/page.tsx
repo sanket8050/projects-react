@@ -10,21 +10,23 @@
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { authOptions } from './api/auth/[...nextauth]/route';
+import AppLandingPage from './applandingPage/page';
 
 export default async function HomePage() {
-  const session = await getServerSession(authOptions);
+  // Pragmatic cast to avoid type compatibility issues with next-auth types in this workspace
+  const session = await getServerSession(authOptions as any);
 
-  if (!session) {
-    redirect('/signin');
+  if (session) {
+    const role = (session as any)?.user?.role;
+    if (role === 'ADMIN') {
+      redirect('/admin');
+    } else if (role) {
+      redirect('/user');
+    } else {
+      redirect('/signin');
+    }
   }
-
-  if (session.user && session.user.role === 'ADMIN') {
-    redirect('/admin');
-  } else if (session.user && session.user.role) {
-    redirect('/user');
-  } else {
-    redirect('/signin');
-  }
-
-  return null; // Never reached due to redirects
+  console.log(session)
+  // No session -> render the public landing page
+  return <AppLandingPage />;
 }

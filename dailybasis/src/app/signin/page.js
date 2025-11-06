@@ -3,9 +3,12 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+
 export default function SignInPage() {
   const [error, setError] = useState('');
   const router = useRouter();
+  // const prisma = new PrismaClient();
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,7 +37,9 @@ export default function SignInPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
+      {/* <h1 className="text-2xl mb-4">{meal}</h1> */}
       <h1 className="text-2xl mb-4">Sign In</h1>
+      
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           name="email"
