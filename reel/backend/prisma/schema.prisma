@@ -1,0 +1,155 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  MEMBER
+}
+
+enum GroupType {
+  FRIENDS
+  ORGANIZATION
+}
+
+enum SplitType {
+  EQUAL
+  EXACT
+  PERCENTAGE
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String?
+  avatarUrl String?
+  googleId  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  groupsOwned     Group[]         @relation("GroupOwner")
+  memberships     GroupMember[]
+  expensesPaid    Transaction[]   @relation("Payer")
+  expenseShares   TransactionParticipant[]
+  donations       Donation[]
+  notifications   Notification[]
+  settlementsPaid Settlement[]    @relation("SettlementPayer")
+  settlementsRecv Settlement[]    @relation("SettlementReceiver")
+}
+
+model Group {
+  id          String    @id @default(uuid())
+  name        String
+  description String?
+  type        GroupType @default(FRIENDS)
+  currency    String    @default("USD")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  ownerId     String
+  owner       User          @relation("GroupOwner", fields: [ownerId], references: [id])
+  members     GroupMember[]
+  transactions Transaction[]
+  departments Department[]
+  donations   Donation[]
+  settlements Settlement[]
+}
+
+model GroupMember {
+  id        String   @id @default(uuid())
+  role      Role     @default(MEMBER)
+  joinedAt  DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  groupId   String
+  group     Group    @relation(fields: [groupId], references: [id])
+
+  @@unique([userId, groupId])
+}
+
+model Department {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+
+  groupId     String
+  group       Group    @relation(fields: [groupId], references: [id])
+  transactions Transaction[]
+}
+
+model Transaction {
+  id          String    @id @default(uuid())
+  title       String
+  amount      Float
+  date        DateTime  @default(now())
+  category    String?
+  splitType   SplitType @default(EQUAL)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  payerId     String
+  payer       User      @relation("Payer", fields: [payerId], references: [id])
+  groupId     String
+  group       Group     @relation(fields: [groupId], references: [id])
+  departmentId String?
+  department  Department? @relation(fields: [departmentId], references: [id])
+
+  participants TransactionParticipant[]
+}
+
+model TransactionParticipant {
+  id            String @id @default(uuid())
+  amountOwed    Float
+  amountPaid    Float  @default(0) // For partial payments tracking if needed, usually 0 if fully paid by payer
+  
+  transactionId String
+  transaction   Transaction @relation(fields: [transactionId], references: [id])
+  userId        String
+  user          User        @relation(fields: [userId], references: [id])
+}
+
+model Donation {
+  id          String   @id @default(uuid())
+  amount      Float
+  message     String?
+  paymentMethod String?
+  createdAt   DateTime @default(now())
+
+  donorId     String
+  donor       User     @relation(fields: [donorId], references: [id])
+  groupId     String
+  group       Group    @relation(fields: [groupId], references: [id])
+}
+
+model Settlement {
+  id          String   @id @default(uuid())
+  amount      Float
+  isPaid      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  payerId     String
+  payer       User     @relation("SettlementPayer", fields: [payerId], references: [id])
+  receiverId  String
+  receiver    User     @relation("SettlementReceiver", fields: [receiverId], references: [id])
+  groupId     String
+  group       Group    @relation(fields: [groupId], references: [id])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  title     String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+}
